@@ -19,7 +19,6 @@ const StarRating = function( { totalStars = 5 }) {
                 <Star 
                     key={i}
                     selected={selectedStars > i}
-                    onSelect={() => setSelectedStars(i + 1)}
                 /> )) }
             <p>
                 {selectedStars} of {totalStars} stars
