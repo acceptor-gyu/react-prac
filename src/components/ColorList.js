@@ -1,7 +1,11 @@
+/**
+ * color-org/src/components/ColorList.js
+ */
+
 import React from "react";
 import Color from "./Color";
 
-const ColorList = function( { colors = [] }){
+const ColorList = function( { colors = [], onRemoveColor = f => f }){
     return (
         <div>
             { colors.map( color =>

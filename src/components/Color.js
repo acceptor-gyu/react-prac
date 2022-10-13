@@ -1,7 +1,12 @@
+/**
+ * color-org/src/components/Color.js
+ */
+
 import React from "react";
+import { FaTrash } from "react-icons/fa"
 import StarRating from "./StarRating";
 
-const Color = function( { title, color, rating, onRemove = f => f }){
+const Color = function( { id, title, color, rating, onRemove = f => f }){
     return (
         <section>
             <h1>{title}</h1>
