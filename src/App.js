@@ -32,15 +32,28 @@ import colorData from "./data/color-data.json"
 
 function App() {
   const [colors, setColors] = useState(colorData);
+  
+  const removeColor = id => {
+    const newColors = colors.filter( color => color.id !== id );
+    setColors(newColors);
+  };
+
+  const rateColor = (id, rating) => {
+    const newColors = colors.map( color => color.id === id ? {...color, rating} : color );
+    setColors(newColors);
+  }
+
   return (
     <ColorList
       colors={colors}
-      onRemoveColor={ id => {
-        // 삭제할 데이터는 filter() 처리, 데이터는 존재함
-        const newColors = colors.filter( color => color.ud !== id);
-        // 필터링 한 후, 현재의 상태 colors를 newColors로 업데이터 > colors 상태가 변경되면 App()은 다시 렌더링 됨
-        setColors(newColors);
-      }}
+      onRemoveColor={ removeColor }
+      onRateColor={ rateColor }
+      // onRemoveColor={ id => {
+      //   // 삭제할 데이터는 filter() 처리, 데이터는 존재함
+      //   const newColors = colors.filter( color => color.ud !== id);
+      //   // 필터링 한 후, 현재의 상태 colors를 newColors로 업데이터 > colors 상태가 변경되면 App()은 다시 렌더링 됨
+      //   setColors(newColors);
+      // }}
     />);
 }
 
