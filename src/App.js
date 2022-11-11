@@ -54,7 +54,9 @@ function App() {
       //   // 필터링 한 후, 현재의 상태 colors를 newColors로 업데이터 > colors 상태가 변경되면 App()은 다시 렌더링 됨
       //   setColors(newColors);
       // }}
-    />);
+    />
+    
+    );
 }
 
 export default App;
